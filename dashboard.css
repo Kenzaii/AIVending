@@ -1,0 +1,281 @@
+:root {
+    --primary-color: #003399;
+    --primary-dark: #002266;
+    --background-color: #f5f5f5;
+    --card-color: #003399;
+    --text-light: #fff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: var(--background-color);
+}
+
+/* Header Styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: #fff;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.back-arrow {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-size: 24px;
+}
+
+.logo {
+    height: 30px;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-icon {
+    position: relative;
+    cursor: pointer;
+}
+
+.nav-icon svg {
+    width: 24px;
+    height: 24px;
+    fill: var(--primary-color);
+}
+
+.nav-icon svg circle {
+    stroke: var(--primary-color);
+}
+
+.nav-icon svg path {
+    fill: var(--primary-color);
+}
+
+.notification {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 12px;
+    min-width: 18px;
+    text-align: center;
+}
+
+/* Optional hover effect */
+.nav-icon:hover svg {
+    fill: var(--primary-dark);
+}
+
+.nav-icon:hover svg circle {
+    stroke: var(--primary-dark);
+}
+
+.nav-icon:hover svg path {
+    fill: var(--primary-dark);
+}
+
+/* Wallet Card Styles */
+.wallet-card {
+    background-color: var(--primary-color);
+    margin: 20px;
+    border-radius: 15px;
+    padding: 30px 20px;
+    color: var(--text-light);
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.machine-graphic {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.machine-graphic svg {
+    max-width: 100px;
+    height: auto;
+}
+
+.wallet-info {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.balance-section {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 60px;
+}
+
+.wallet-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.label {
+    font-size: 12px;
+    opacity: 0.8;
+}
+
+.amount, .id {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.dots {
+    color: rgba(255, 255, 255, 0.5);
+    margin: 10px 0;
+}
+
+.block-id {
+    font-size: 12px;
+    opacity: 0.8;
+}
+
+.click-text {
+    text-align: center;
+    color: var(--text-light);
+    font-size: 12px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    opacity: 0.8;
+    letter-spacing: 2px;
+}
+
+.unlock-button {
+    background-color: white;
+    color: var(--primary-color);
+    border: none;
+    width: 100%;
+    padding: 15px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.unlock-button.unlocking {
+    background-color: #cccccc;  /* Grey background */
+    color: #666666;            /* Darker grey text */
+    cursor: default;           /* Remove pointer cursor */
+}
+
+.unlock-button:disabled {
+    opacity: 0.8;              /* Slightly dim the button */
+}
+
+.unlock-button:hover {
+    background-color: #f8f8f8;
+}
+
+/* Product List Styles */
+.product-list {
+    background-color: white;
+    margin: 20px;
+    border-radius: 15px;
+    padding: 20px;
+}
+
+h2 {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.category {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.category:last-child {
+    border-bottom: none;
+}
+
+.category h3 {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.product-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+    padding: 10px;
+}
+
+.product-item:last-child {
+    margin-bottom: 0;
+}
+
+.product-image {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.product-details {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 0;
+}
+
+.product-name {
+    font-size: 14px;
+    color: #333;
+    margin-right: 10px;
+    flex: 1;
+    white-space: normal;
+}
+
+.product-price {
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 16px;
+    white-space: nowrap;
+}
+
+.door-opened {
+    color: var(--text-light);
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.door-message {
+    color: var(--text-light);
+    font-size: 14px;
+    text-align: center;
+    opacity: 0.8;
+}
+
+#opened-content {
+    margin-top: 30px;
+} 

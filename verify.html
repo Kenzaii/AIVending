@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verify OTP - Smartsys</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="path/to/jjooz-logo.png" alt="Smartsys Logo">
+            <p class="tagline">Easy. Fresh. Healthy.</p>
+        </div>
+
+        <form id="otpForm" onsubmit="verifyOTP(event)">
+            <h2>Enter Verification Code</h2>
+            <p class="otp-message">We've sent a verification code to your phone</p>
+            
+            <div class="otp-input">
+                <input type="text" maxlength="6" id="otp" required placeholder="Enter 6-digit code">
+            </div>
+
+            <button type="submit" class="login-button">Verify</button>
+        </form>
+    </div>
+
+    <script src="verify.js"></script>
+</body>
+</html> 

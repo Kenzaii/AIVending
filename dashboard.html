@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smartsys Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <header>
+        <div class="nav-left">
+            <a href="login.html" class="back-arrow">←</a>
+            <img src="path/to/smartsys-logo.png" alt="Smartsys" class="logo">
+        </div>
+        <div class="nav-right">
+            <!-- Money/Top-up Icon with Circle -->
+            <div class="nav-icon">
+                <svg viewBox="0 0 24 24" width="24" height="24">
+                    <circle cx="12" cy="12" r="11" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/>
+                </svg>
+                <span class="notification">1</span>
+            </div>
+            
+            <!-- Profile Icon -->
+            <div class="nav-icon">
+                <svg viewBox="0 0 24 24" width="24" height="24">
+                    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                </svg>
+            </div>
+            
+            <!-- Scan Icon -->
+            <div class="nav-icon">
+                <svg viewBox="0 0 24 24" width="24" height="24">
+                    <path d="M3 5v4h2V5h4V3H5c-1.1 0-2 .9-2 2zm2 10H3v4c0 1.1.9 2 2 2h4v-2H5v-4zm14 4h-4v2h4c1.1 0 2-.9 2-2v-4h-2v4zm0-16h-4v2h4v4h2V5c0-1.1-.9-2-2-2z"/>
+                </svg>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="wallet-card">
+            <div class="machine-graphic">
+                <svg viewBox="0 0 100 180" width="100" height="180">
+                    <!-- Main machine body -->
+                    <rect x="5" y="5" width="90" height="170" 
+                        fill="none" 
+                        stroke="rgba(255, 255, 255, 0.5)" 
+                        stroke-width="2"
+                        rx="5"/>
+                    
+                    <!-- Glass door area -->
+                    <rect x="15" y="15" width="70" height="120" 
+                        fill="none" 
+                        stroke="rgba(255, 255, 255, 0.5)" 
+                        stroke-width="1.5"/>
+                    
+                    <!-- Shelves -->
+                    <line x1="15" y1="35" x2="85" y2="35" 
+                        stroke="rgba(255, 255, 255, 0.5)" 
+                        stroke-width="1"/>
+                    <line x1="15" y1="55" x2="85" y2="55" 
+                        stroke="rgba(255, 255, 255, 0.5)" 
+                        stroke-width="1"/>
+                    <line x1="15" y1="75" x2="85" y2="75" 
+                        stroke="rgba(255, 255, 255, 0.5)" 
+                        stroke-width="1"/>
+                    <line x1="15" y1="95" x2="85" y2="95" 
+                        stroke="rgba(255, 255, 255, 0.5)" 
+                        stroke-width="1"/>
+                    <line x1="15" y1="115" x2="85" y2="115" 
+                        stroke="rgba(255, 255, 255, 0.5)" 
+                        stroke-width="1"/>
+                    
+                    <!-- Bottom panel -->
+                    <rect x="15" y="145" width="70" height="20" 
+                        fill="none" 
+                        stroke="rgba(255, 255, 255, 0.5)" 
+                        stroke-width="1.5"/>
+                </svg>
+            </div>
+            
+            <div class="wallet-info">
+                <div class="balance-section">
+                    <div class="wallet-item">
+                        <span class="label">Personal Wallet</span>
+                        <span class="amount">$54.21</span>
+                    </div>
+                    <div class="wallet-item">
+                        <span class="label">Machine No.</span>
+                        <span class="id">SG010570</span>
+                    </div>
+                </div>
+
+                <div id="unlock-content">
+                    <div class="click-text">. . . CLICK TO . . .</div>
+                    <button class="unlock-button" onclick="handleUnlock(this)">UNLOCK THE DOOR</button>
+                </div>
+
+                <div id="opened-content" style="display: none;">
+                    <div class="door-opened">. . . Door opened . . .</div>
+                    <div class="door-message">Just grab and go. Payment will be auto-deducted</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-list">
+            <h2>Product list in SG010570</h2>
+            
+            <div class="category">
+                <h3>BEVERAGES_COFFEE</h3>
+                <div class="product-item">
+                    <img src="https://m.media-amazon.com/images/I/71nsU-7Qo2L._AC_UF1000,1000_QL80_.jpg" 
+                        alt="Nescafe Latte" 
+                        class="product-image">
+                    <div class="product-details">
+                        <span class="product-name">Nescafe Latte Low Fat Milk Coffee Drink 240ml</span>
+                        <span class="product-price">$1.67</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="category">
+                <h3>BEVERAGES_MILK/YOGHURT/SOYA</h3>
+                <div class="product-item">
+                    <img src="https://oatside.com/wp-content/uploads/2024/04/Pocket_Pack_Straw_Chocolate.jpg" 
+                        alt="Oatside" 
+                        class="product-image">
+                    <div class="product-details">
+                        <span class="product-name">Oatside Chocolate Oat Drink 200ml</span>
+                        <span class="product-price">$2.59</span>
+                    </div>
+                </div>
+                <div class="product-item">
+                    <img src="https://media.nedigital.sg/fairprice/fpol/media/images/product/XL/415556_XL1_20220422.jpg?w=400&q=70" 
+                        alt="Vitasoy" 
+                        class="product-image">
+                    <div class="product-details">
+                        <span class="product-name">Vitasoy Soya Bean Packet Drink 250ml</span>
+                        <span class="product-price">$1.18</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="category">
+                <h3>BEVERAGES_SOFT DRINKS</h3>
+                <div class="product-item">
+                    <img src="https://myras.com.sg/cdn/shop/products/COCA_COLA_Classic_Original_Taste_500ml.jpg?v=1622702006" 
+                        alt="Coca Cola" 
+                        class="product-image">
+                    <div class="product-details">
+                        <span class="product-name">Coca Cola 500ml</span>
+                        <span class="product-price">$2.00</span>
+                    </div>
+                </div>
+                <div class="product-item">
+                    <img src="https://www.mengchong.com.sg/image/cache/catalog/Products/CC/Grape-500x500.png" 
+                        alt="Hey Seng" 
+                        class="product-image">
+                    <div class="product-details">
+                        <span class="product-name">Hey Seng C&C Grape Flavoured Sparkling Drink 500ml</span>
+                        <span class="product-price">$2.19</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="category">
+                <h3>BEVERAGES_TEA</h3>
+                <div class="product-item">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEmxPMOAg5yJiTRTsRVgp4i5feTABye7LoUw&s" 
+                        alt="Authentic Tea House" 
+                        class="product-image">
+                    <div class="product-details">
+                        <span class="product-name">Authentic Tea House Ayataka Tea 500ml</span>
+                        <span class="product-price">$1.99</span>
+                    </div>
+                </div>
+                <div class="product-item">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQO-FvFLmLkphgrMECXzKJF7o3t4LNvc5wrdw&s" 
+                        alt="Ito En" 
+                        class="product-image">
+                    <div class="product-details">
+                        <span class="product-name">Ito En Jasmine Green Tea Unsweetened 500ml</span>
+                        <span class="product-price">$2.60</span>
+                    </div>
+                </div>
+                <div class="product-item">
+                    <img src="https://img.rtacdn-os.com/20210623/8d42904c-8deb-4f38-9b5f-40f85462068b" 
+                        alt="Pokka Green" 
+                        class="product-image">
+                    <div class="product-details">
+                        <span class="product-name">Pokka Green Tea 500ml</span>
+                        <span class="product-price">$1.79</span>
+                    </div>
+                </div>
+                <div class="product-item">
+                    <img src="https://img.rtacdn-os.com/20221130/a61528bd-4f6d-45fe-b575-2aa4da1e6e86" 
+                        alt="Pokka Ice Lemon" 
+                        class="product-image">
+                    <div class="product-details">
+                        <span class="product-name">Pokka Ice Lemon Tea 500ml</span>
+                        <span class="product-price">$1.79</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="category">
+                <h3>BEVERAGES_WATER</h3>
+                <div class="product-item">
+                    <img src="https://laz-img-sg.alicdn.com/p/04b6df46956eebffbb66134e7129c1cf.jpg" 
+                        alt="AquaEterna" 
+                        class="product-image">
+                    <div class="product-details">
+                        <span class="product-name">AquaEterna Mineral Water 370ml</span>
+                        <span class="product-price">$1.80</span>
+                    </div>
+                </div>
+                <div class="product-item">
+                    <img src="https://www.evian.com/en_us/wp-content/uploads/2020/03/evian-water-500-ml-bottle-everyday.png" 
+                        alt="Evian" 
+                        class="product-image">
+                    <div class="product-details">
+                        <span class="product-name">Evian Natural Mineral Water 500ml</span>
+                        <span class="product-price">$2.22</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="category">
+                <h3>READY TO EAT_DESSERT/CAKE</h3>
+                <div class="product-item">
+                    <img src="https://img.lazcdn.com/g/p/e616fff62d19f680a15638c35d794a40.jpg_720x720q80.jpg" 
+                        alt="Irodori Sweets" 
+                        class="product-image">
+                    <div class="product-details">
+                        <span class="product-name">Irodori Sweets Fruit Jelly's Time (Assorted Flavours) 25g</span>
+                        <span class="product-price">$2.71</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+    function handleUnlock(button) {
+        button.textContent = 'Unlocking ...';
+        button.classList.add('unlocking');
+        button.disabled = true;
+
+        // Simulate unlock delay
+        setTimeout(() => {
+            document.getElementById('unlock-content').style.display = 'none';
+            document.getElementById('opened-content').style.display = 'block';
+        }, 2000); // Show "Door opened" after 2 seconds
+    }
+    </script>
+</body>
+</html> 

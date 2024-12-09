@@ -1,0 +1,168 @@
+/* Base styles */
+:root {
+    --primary-color: #007AFF;
+    --primary-dark: #0056B3;
+    --text-color: #333;
+    --background-color: #fff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Logo styles */
+.logo {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.logo img {
+    max-width: 150px;
+}
+
+.tagline {
+    color: var(--text-color);
+    margin-top: 10px;
+}
+
+/* Action buttons */
+.action-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.action-item {
+    text-align: center;
+    flex: 1;
+}
+
+.circle-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid var(--primary-color);
+    margin: 0 auto 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.circle-icon svg {
+    width: 24px;
+    height: 24px;
+    fill: var(--primary-color);
+}
+
+.action-item span {
+    font-size: 14px;
+    color: var(--text-color);
+}
+
+/* Form styles */
+.phone-input {
+    display: flex;
+    margin-bottom: 20px;
+    gap: 10px;
+}
+
+select {
+    width: 80px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+input[type="tel"] {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.login-button {
+    width: 100%;
+    padding: 15px;
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+    background-color: var(--primary-dark);
+}
+
+/* Payment methods */
+.payment-methods {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.payment-methods img {
+    max-width: 100%;
+    height: auto;
+    padding: 0 15px;
+}
+
+/* Terms */
+.terms {
+    text-align: center;
+    font-size: 12px;
+    color: #666;
+}
+
+.terms a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.terms a:hover {
+    color: var(--primary-dark);
+}
+
+/* Add these to your existing styles.css */
+
+.otp-input {
+    margin: 20px 0;
+}
+
+.otp-input input {
+    width: 100%;
+    padding: 15px;
+    font-size: 18px;
+    text-align: center;
+    letter-spacing: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.otp-message {
+    text-align: center;
+    color: #666;
+    margin: 10px 0;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 10px;
+} 
